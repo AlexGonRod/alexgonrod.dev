@@ -1,38 +1,42 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import { graphql } from 'gatsby';
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import { graphql } from 'gatsby'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 const Post = ({ data }) => {
-
-	const { markdownRemark: post } = data;
+	const { markdownRemark: post } = data
 
 	return (
-		<div className="blog-post-container">
-			<Helmet title={`Your Blog Name - ${post.frontmatter.title}`} />
-			<div className="blog-post">
-				<h1>{post.frontmatter.title}</h1>
-				<div
-					className="blog-post-content"
-					dangerouslySetInnerHTML={{ __html: post.html }}
-				/>
+		<Layout>
+			<SEO title={post.frontmatter.title} />
+			<div className="blog-post-container">
+				<Helmet title={post.frontmatter.title} />
+				<div className="blog-post">
+					<h1>{post.frontmatter.title}</h1>
+					<div
+						className="blog-post-content"
+						dangerouslySetInnerHTML={{ __html: post.html }}
+					/>
+				</div>
 			</div>
-		</div>
-	);
-};
+		</Layout>
+	)
+}
 
-export default Post;
+export default Post
 export const pageQuery = graphql`
-query BlogPostByPath($path: String!) {
-			markdownRemark(frontmatter: { path: { eq: $path } }) {
-				html
-				frontmatter {
-					date(locale: "")
-					description
-					lenguage
-					path
-					tags
-					title
-				}
+	query BlogPostByPath($path: String!) {
+		markdownRemark(frontmatter: { path: { eq: $path } }) {
+			html
+			frontmatter {
+				date(locale: "")
+				description
+				lenguage
+				path
+				tags
+				title
 			}
 		}
+	}
 `

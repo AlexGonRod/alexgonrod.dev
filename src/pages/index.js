@@ -1,17 +1,53 @@
-import React from "react"
+import React from 'react'
+import { graphql, Link } from 'gatsby'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import PostPreview from '../components/postPreview'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+const IndexPage = ({ data }) => {
+	const { edges: posts } = data.allMarkdownRemark
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to my new site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-    </div>
-  </Layout>
-)
+	return (
+		<Layout>
+			<SEO title="Home" />
+			<div className="blog-posts">
+				{posts
+					.filter(post => post.node.frontmatter.title.length > 0)
+					.map(({ node: post }) => {
+						return (
+							<div className="blog-post-preview" key={post.id}>
+								<PostPreview
+									path={post.frontmatter.path}
+									tags={post.frontmatter.tags}
+									title={post.frontmatter.title}
+									date={post.frontmatter.date}
+								/>
+							</div>
+						)
+					})}
+			</div>
+		</Layout>
+	)
+}
 
 export default IndexPage
+
+export const dataQuery = graphql`
+	query postQuery {
+		allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+			edges {
+				node {
+          id
+					frontmatter {
+						date(locale: "")
+						description
+						lenguage
+						path
+						title
+						tags
+					}
+				}
+			}
+		}
+	}
+`
