@@ -1,10 +1,8 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import PostPreview from '../components/postPreview'
-
-import '../components/globalStyles.scss'
 
 const IndexPage = ({ data }) => {
 	const { edges: posts } = data.allMarkdownRemark
@@ -20,9 +18,9 @@ const IndexPage = ({ data }) => {
 							<div className="blog-post-preview" key={post.id}>
 								<PostPreview
 									path={post.frontmatter.path}
+									tags={post.frontmatter.tags}
 									title={post.frontmatter.title}
 									date={post.frontmatter.date}
-									tags={post.frontmatter.tags}
 								/>
 							</div>
 						)
@@ -34,16 +32,18 @@ const IndexPage = ({ data }) => {
 
 export default IndexPage
 
-export const postQuery = graphql`
-	query indexQuery {
+export const dataQuery = graphql`
+	query postQuery {
 		allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
 			edges {
 				node {
-					id
+          id
 					frontmatter {
+						date(locale: "")
+						description
+						lenguage
 						path
 						title
-						date
 						tags
 					}
 				}

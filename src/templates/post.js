@@ -1,23 +1,26 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import SEO from '../components/seo'
 import { graphql } from 'gatsby'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 const Post = ({ data }) => {
 	const { markdownRemark: post } = data
 
 	return (
-		<div className="blog-post-container">
+		<Layout>
 			<SEO title={post.frontmatter.title} />
-			<Helmet title={post.frontmatter.title} />
-			<div className="blog-post">
-				<h1>{post.frontmatter.title}</h1>
-				<div
-					className="blog-post-content"
-					dangerouslySetInnerHTML={{ __html: post.html }}
-				/>
+			<div className="blog-post-container">
+				<Helmet title={post.frontmatter.title} />
+				<div className="blog-post">
+					<h1>{post.frontmatter.title}</h1>
+					<div
+						className="blog-post-content"
+						dangerouslySetInnerHTML={{ __html: post.html }}
+					/>
+				</div>
 			</div>
-		</div>
+		</Layout>
 	)
 }
 
@@ -31,6 +34,7 @@ export const pageQuery = graphql`
 				description
 				lenguage
 				path
+				tags
 				title
 			}
 		}
