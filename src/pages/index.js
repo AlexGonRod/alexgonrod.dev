@@ -37,7 +37,7 @@ export const dataQuery = graphql`
 		allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
 			edges {
 				node {
-          id
+					id
 					frontmatter {
 						date(locale: "")
 						description
