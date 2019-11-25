@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
 header {
     text-align: center;
 }
@@ -19,29 +25,21 @@ footer {
     }
 }
 
+.blog-posts {
+    margin-bottom: 60px;
+}
+
 .blog-post-preview {
     border-radius: 4px;
     font-size: 12px;
     grid-column: span 1;
     overflow: hidden;
-    padding: 8px 8px 16px;
     position: relative;
     transition: transform .3s ease;
     width: 100%;
 }
-
-ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    .tag {
-        flex-grow: 0.1;
-        list-style: none;
-        padding: 0;
-        margin: 0 10px 0 0;
-        background: antiquewhite;
-        text-align: center;
-    }
+.blog-post-preview:not(:nth-child(1)) {
+    margin-top: 16px;
 }
 
 .twitter-icon {
