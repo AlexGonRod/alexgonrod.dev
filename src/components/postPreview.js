@@ -9,6 +9,27 @@ const PostPreview = ({ path, title, date, tags, img, excerpt, time }) => {
 			<div className="img">
 				<Img className="card-img" fluid={img} />
 			</div>
+			<ul className="card-meta-tags" style={{
+				display: `flex`,
+				flexDirection: `row`,
+				flexWrap: `wrap`,
+				margin: `15px 0`,
+				padding: `0`
+			}}>
+				{tags.map(tag => {
+					return (
+						<li className="meta-tag" key={tag} style={{
+							flexGrow: 0.1,
+							listStyle: `none`,
+							padding: 0,
+							margin: `0 10px 0 0`,
+							background: `antiquewhite`,
+							textAlign: `center`,
+						}}>{tag}
+						</li>
+					)
+				})}
+			</ul>
 			<h3 style={{
 				color: `#000000e5`,
 				fontSize: 24,
@@ -28,27 +49,6 @@ const PostPreview = ({ path, title, date, tags, img, excerpt, time }) => {
 				/
 				<span style={{ fontSize: `1rem`, margin: `0 0 16px 5px` }}>{time} minutos de lectura</span>
 			</div>
-			<ul className="card-meta-tags" style={{
-				display: `flex`,
-				flexDirection: `row`,
-				flexWrap: `wrap`,
-				margin: `0`,
-				padding: `0`
-			}}>
-				{tags.map(tag => {
-					return (
-						<li className="meta-tag" key={tag} style={{
-							flexGrow: 0.1,
-							listStyle: `none`,
-							padding: 0,
-							margin: `0 10px 0 0`,
-							background: `antiquewhite`,
-							textAlign: `center`,
-						}}>{tag}
-						</li>
-					)
-				})}
-			</ul>
 			<p className="card-excerpt" style={{ fontSize: `.8em`, margin: `16px 0` }}>{excerpt}</p>
 		</>
 	)

@@ -10,7 +10,7 @@ const IndexPage = ({ data }) => {
 	return (
 		<Layout>
 			<SEO title="Home" />
-			<div className="blog-posts">
+			<div className="blog-posts" style={{ padding: `15px` }}>
 				{posts
 					.filter(post => post.node.frontmatter.title.length > 0)
 					.map(({ node: post }) => {
