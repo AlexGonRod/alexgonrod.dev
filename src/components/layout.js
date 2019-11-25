@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
 			}
 		}
 	`)
-	const { title, social } = data.site.siteMetadata
+	const { title } = data.site.siteMetadata
 
 	return (
 		<>

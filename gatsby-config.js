@@ -1,12 +1,22 @@
 module.exports = {
 	siteMetadata: {
-		title: `alexgonrod.dev`,
-		description: `alexgonrod.dev website`,
+		title: `alexgonrod.io`,
+		description: `alexgonrod.io website`,
 		author: `@deepinsd83`,
 	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-catch-links`,
+		`gatsby-transformer-sharp`,
+		`gatsby-plugin-sharp`,
+		{
+			resolve: `gatsby-transformer-remark`,
+			options: {
+				plugins: [
+					`gatsby-remark-reading-time`,
+				],
+			},
+		},
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -21,14 +31,11 @@ module.exports = {
 				path: `${__dirname}/src/posts`,
 			}
 		},
-		`gatsby-transformer-remark`,
-		`gatsby-transformer-sharp`,
-		`gatsby-plugin-sharp`,
 		`gatsby-plugin-sass`,
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
-				name: `alexgonrod.dev website`,
+				name: `alexgonrod.io website`,
 				short_name: `blog`,
 				start_url: `/`,
 				background_color: `#663399`,

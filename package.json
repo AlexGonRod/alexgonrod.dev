@@ -1,6 +1,6 @@
 {
-  "name": "alexgonrod.dev",
-  "description": "https://alexgonrod.dev website",
+  "name": "alexgonrod.github.io",
+  "description": "https://alexgonrod.github.io website",
   "author": "Alex Gonzalez Rodriguez",
   "version": "0.1.0",
   "dependencies": {
@@ -13,6 +13,7 @@
     "gatsby-plugin-react-helmet": "^3.1.14",
     "gatsby-plugin-sass": "^2.1.23",
     "gatsby-plugin-sharp": "^2.2.37",
+    "gatsby-remark-reading-time": "^1.0.1",
     "gatsby-source-filesystem": "^2.1.36",
     "gatsby-transformer-remark": "^2.6.37",
     "gatsby-transformer-sharp": "^2.3.3",
@@ -36,13 +37,13 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "deploy": "gatsby build && gh-pages -d public -b master -r https://$GH_TOKEN@github.com/AlexGonRod/alexgonrod.dev.git"
+    "deploy": "gatsby build && gh-pages -d public -b master -r https://$GH_TOKEN@github.com/AlexGonRod/alexgonrod.github.io.git"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlexGonRod/alexgonrod.dev.git"
+    "url": "git+https://github.com/AlexGonRod/alexgonrod.github.io.git"
   },
   "bugs": {
-    "url": "https://github.com/AlexGonRod/alexgonrod.dev/issues"
+    "url": "https://github.com/AlexGonRod/alexgonrod.github.io/issues"
   }
 }
