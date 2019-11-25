@@ -37,7 +37,7 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "deploy": "gatsby build && gh-pages -d public -b master -r https://$GH_TOKEN@github.com/AlexGonRod/alexgonrod.github.io.git"
+    "deploy": "gatsby build && node ./scripts/deploy-github"
   },
   "repository": {
     "type": "git",
