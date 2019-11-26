@@ -6,6 +6,6 @@ description: 'Segundo post'
 lenguage: 🇪🇸
 img: ../images/gallery/gatsby-blog.png
 tags:
-- blog
-- gatsby
+  - blog
+  - gatsby
 ---

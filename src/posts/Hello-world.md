@@ -6,9 +6,10 @@ description: 'Primer post donde explicaré como pude crear este blog gracias a G
 lenguage: 🇪🇸
 img: ../images/gallery/gatsby-blog.png
 tags:
-- blog
-- gatsby
+  - blog
+  - gatsby
 ---
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque magna orci, scelerisque ut lacus at, convallis tempor turpis. Maecenas et magna iaculis, venenatis diam at, suscipit mi. Integer hendrerit convallis felis at vehicula. Donec fringilla nisi magna, ac scelerisque elit egestas in. Aliquam faucibus, est et dignissim ultricies, augue nisl pellentesque tellus, et molestie neque nisl vitae erat. Donec posuere viverra quam, non semper ipsum tempor vitae. Pellentesque vulputate auctor mi, in scelerisque ipsum euismod at. Duis diam orci, ultricies ac hendrerit ac, vulputate id urna. Curabitur non aliquam libero, in malesuada libero. Mauris sit amet semper mauris.
 
 Praesent arcu urna, ullamcorper a elit nec, consectetur iaculis odio. Duis maximus maximus lacinia. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse potenti. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque condimentum metus eros, non malesuada neque tempus id. Donec gravida, dui sed elementum malesuada, lectus tortor eleifend ex, in dapibus lorem libero ultrices tellus. Proin eu magna non sem porta dignissim. Sed sit amet sodales sem.
