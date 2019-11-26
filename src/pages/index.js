@@ -19,12 +19,12 @@ const IndexPage = ({ data }) => {
 						return (
 							<div className="blog-post-preview" key={post.id}>
 								<PostPreview
-									path={ path }
-									tags={ tags }
-									title={ title }
-									excerpt={ post.excerpt }
-									date={ date }
-									img={ img.childImageSharp.fluid }
+									path={path}
+									tags={tags}
+									title={title}
+									excerpt={post.excerpt}
+									date={date}
+									img={img.childImageSharp.fluid}
 									time={post.timeToRead}
 								/>
 							</div>
@@ -53,9 +53,9 @@ export const dataQuery = graphql`
 						tags
 						img {
 							childImageSharp {
-							  fluid(maxWidth: 600) {
-								...GatsbyImageSharpFluid
-							  }
+								fluid(maxWidth: 600) {
+									...GatsbyImageSharpFluid
+								}
 							}
 						}
 					}

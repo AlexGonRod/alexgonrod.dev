@@ -8,7 +8,11 @@ import Img from 'gatsby-image'
 const Post = ({ data }) => {
 	const { markdownRemark } = data
 	const { html, frontmatter } = markdownRemark
-	const { img: { childImageSharp: { fluid: img } } } = frontmatter
+	const {
+		img: {
+			childImageSharp: { fluid: img },
+		},
+	} = frontmatter
 
 	return (
 		<Layout>
@@ -18,12 +22,15 @@ const Post = ({ data }) => {
 					<Img className="details-img" fluid={img} />
 				</div>
 				<Helmet title={frontmatter.title} />
-				<div className="blog-post" style={{
-					margin: `16px auto`,
-					maxWidth: 960,
-					padding: `0px 1.0875rem 1.45rem`,
-					paddingTop: 0,
-				}}>
+				<div
+					className="blog-post"
+					style={{
+						margin: `16px auto`,
+						maxWidth: 960,
+						padding: `0px 1.0875rem 1.45rem`,
+						paddingTop: 0,
+					}}
+				>
 					<h1>{frontmatter.title}</h1>
 					<div
 						className="blog-post-content"
