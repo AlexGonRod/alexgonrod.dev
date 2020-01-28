@@ -1,8 +1,10 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import Header from './header'
 import Footer from './footer'
 
-import Header from './header'
+// import { GlobalStyles, lightTheme, darkTheme } from './themes'
+
 import './layout.css'
 import './globalStyles.scss'
 
@@ -21,13 +23,16 @@ const Layout = ({ children }) => {
 	const { title } = data.site.siteMetadata
 
 	return (
-		<>
-			<Header siteTitle={title} />
-			<div>
-				<main>{children}</main>
-				<Footer />
-			</div>
-		</>
+		// <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+			<>
+				{/* <GlobalStyles /> */}
+				<Header siteTitle={title} />
+				<div>
+					<main>{children}</main>
+					<Footer />
+				</div>
+			</>
+		// </ThemeProvider>
 	)
 }
 
